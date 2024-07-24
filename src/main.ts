@@ -7,8 +7,8 @@ async function bootstrap() {
 
   app.useGlobalPipes(
     new ValidationPipe({
-      whitelist: true,
-      forbidNonWhitelisted: true,
+      whitelist: true, // Solo deja la data que espera el DTO/validacion
+      forbidNonWhitelisted: true, // Manda un error en algo que no espera el DTO/validacion
     })
   )
 

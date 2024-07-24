@@ -29,15 +29,10 @@ export class CarsController {
   }
 
   @Post()
-  @UsePipes()
   create(
     @Body() creatCarDto: CreateCarDto,
   ){
-    return {
-      ok: true,
-      method: 'POST',
-      creatCarDto,
-    }
+    return this.carsService.create(creatCarDto);
   }
 
   @Patch(':id')
